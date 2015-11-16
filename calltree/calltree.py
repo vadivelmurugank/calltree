@@ -117,7 +117,7 @@ class calltree:
             fnode = self.funcnodes[func]
             funcdef = fnode["define"]
             for ftuple in funcdef:
-                print(' '*8,"-- <%s:%d> %s" %(ftuple[0], int(ftuple[1]), ' '.join(ftuple[2])))
+                print(' '*8,"-- %s <%d:%s>" %(' '.join(ftuple[2]),ftuple[1], int(ftuple[0])))
 
             funcdef = fnode["caller"]
             if len(funcdef.keys()) > 0:
@@ -126,7 +126,7 @@ class calltree:
                 flist = funcdef[cfunc]
                 print(" "*4,"%s" %(cfunc))
                 for ftuple in flist:
-                    print(' '*8,"|>>   <%s:%d> %s" %(ftuple[0], int(ftuple[1]), ' '.join(ftuple[2])))
+                    print(' '*8,"|>>   %s <%d:%s> " %(' '.join(ftuple[2]),ftuple[1], int(ftuple[0])))
 
             funcdef = fnode["callee"]
             if len(funcdef.keys()) > 0:
@@ -136,7 +136,7 @@ class calltree:
                 flist = funcdef[cfunc]
                 print(" "*4,"|<<   %s " %(cfunc))
                 for ftuple in flist:
-                    print(' '*8,'|'+'-'*4,"<%s:%d> %s" %(ftuple[0], int(ftuple[1]), ' '.join(ftuple[2])))
+                    print(' '*8,'|'+'-'*4,"%s <%d:%s>" %(' '.join(ftuple[2]), ftuple[1], int(ftuple[0])))
 
     def showgraph(self):
         
