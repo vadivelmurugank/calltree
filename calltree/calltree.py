@@ -126,7 +126,7 @@ class calltree:
                 flist = funcdef[cfunc]
                 print(" "*4,"%s" %(cfunc))
                 for ftuple in flist:
-                    print(' '*8,"|>>   %s <%d:%s> " %(' '.join(ftuple[2]),int(ftuple[0]), ftuple[0]))
+                    print(' '*8,"|>>   %s <%d:%s> " %(' '.join(ftuple[2]),int(ftuple[1]), ftuple[0]))
 
             funcdef = fnode["callee"]
             if len(funcdef.keys()) > 0:
